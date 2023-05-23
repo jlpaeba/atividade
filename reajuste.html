@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste</title>
+</head>
+<body>
+<h1>Reajuste</h1>
+<button id="botao">COMEÇAR</button>
+
+<div id="div1"></div>
+<div id="div2"></div>
+
+<script>
+    let botao = document.getElementById('botao')
+    let div2 = document.getElementById('div2')
+    let div1 = document.getElementById('div1')
+    botao.addEventListener('click', reajuste)
+
+    
+    function reajuste(){
+        let nome = prompt('Digite o nome do funcionario, Por favor!')
+        let var2 = parseInt(prompt('qual o salario de ' + nome + '?'))
+        let var3 = parseInt(prompt('O salario de ' + nome + ' vai se aumentado em qual porcetagem?'))
+        
+        let sMais = (var2 * var3) /100
+        //console.log(sMais)
+        let soma = (sMais + var2)
+
+
+        div1.innerHTML = (`<h1>${nome} recebeu um aumento salarial!</h1>`)
+        div2.innerHTML = (`<p>O salario atual é de R$${var2} </p>
+        <p>com o aumento de ${var3}%, o salario vai aumentar R$ ${sMais} no próximo mês</p>
+        <p>E a partir dai, ${nome} vai passar a ganhar R$ ${soma} </p>
+        `)
+
+
+    }
+
+</script>
+
+
+    
+</body>
+</html>

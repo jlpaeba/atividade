@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC MUDANÇA</title>
+</head>
+
+<body>
+
+    <h1>mudança de preço</h1>
+
+    <button id="botao">VER MUDANÇA</button>
+    <div id="recebe1"></div>
+    <div id="recebe2"></div>
+    <div id="recebe3"></div>
+    <div id="recebe4"></div>
+
+
+    <script>
+        let botao = document.getElementById("botao")
+        let recebe1 = document.getElementById("recebe1")
+        let recebe2 = document.getElementById("recebe2")
+        let recebe3 = document.getElementById("recebe3")
+        let recebe4 = document.getElementById("recebe4")
+        botao.addEventListener('click', funcaoMudou)
+
+        function funcaoMudou() {
+            let v1 = parseInt(prompt('coloque o valor do produto antes da mudança'))
+            let v2 = parseInt(prompt('coloque o valor do produto depois da mudança'))
+            let preco
+            let varia
+            recebe1.innerHTML = (`<p>Antes o preço era ${v1} agora é ${v2}.</p>`)
+
+            if (v1 > v2) {
+                recebe2.innerHTML = (`<p>Hoje o produto está mais barato.</p>`)
+                preco = (v1 - v2)
+                recebe3.innerHTML = (`<p>O preço caiu R$ ${preco} em relação ao preço anterior.   </p>`)
+                //console.log(preco)
+                varia = ((v1 - v2) / v1) * 100
+                console.log(varia)
+                recebe4.innerHTML = (`<p>Uma variação de  ${varia}% para baixo</p>`)
+            } else if (v1 < v2) {
+
+                recebe2.innerHTML = (`<p>Hoje o produto está mais caro</p>`)
+                preco = (v2 - v1)
+                recebe3.innerHTML = (`<p>O preço aumentou R$ ${preco} em relação ao preço anterior.   </p>`)
+                //console.log(preco)
+                varia = ((v2 - v1) / v1) * 100
+                console.log(varia)
+                recebe4.innerHTML = (`<p>Uma variação de  ${varia}% para cima</p>`)
+            } else if (v1 == v2) {
+                recebe2.innerHTML = (`<p>Hoje o produto está custando o mesmo valor</p>`)
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

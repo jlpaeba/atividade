@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>botão123</title>
+</head>
+<body>
+    <button id="botao1">Botao 1</button>
+    <button id="botao2">Botao 2</button>
+    <button id="botao3">Botao 3</button>
+
+    <script>
+        let botao1 = document.getElementById('botao1');
+        let botao2 = document.getElementById('botao2');
+        let botao3 = document.getElementById('botao3');
+
+        //se clicar no botao 1, alert vc clicou no 1
+        botao1.addEventListener('click', funcao1);
+    //botao1 é a variavle do botao, add`eve`list` é adicionar um função a um evento, uma ação no caso o clique no botão
+
+    botao2.addEventListener('click', funcao2);
+    botao3.addEventListener('click', funcao3);
+        //função que você vai puxar quando clicar no botão 1
+        function funcao1(){
+            alert('você clicou no botao 1');
+        }
+        function funcao2(){
+            alert('você clicou no botao 2');
+        }
+        function funcao3(){
+            alert('você clicou no botao 3');
+        }
+
+
+
+
+    </script>
+</body>
+</html>

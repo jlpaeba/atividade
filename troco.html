@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+</head>
+<body>
+
+    <h1>troco do produto</h1>
+    <button id="botao"> começar</button>
+
+    <script>
+        let botao = document.getElementById("botao")
+        botao.addEventListener('click', produto)
+        function produto() {
+
+        let nome = prompt ('coloque o nome do produto')
+        let var1 = parseInt( prompt('quanto custa o valor do produto'))
+        let var2 = parseInt( prompt('quanto você deu '))
+        let troco = (var2 - var1)
+        if(troco < 0){
+            alert('NADA DE TROCO SEU SAFADO')
+        }else{
+        alert('você comprou ' + nome + ' que custou ' + var1 + ', Deu R$' + var2 +' em dinheiro e vai receber R$ ' + troco + ' de troco. Volte sempre! ')
+        }
+    }
+
+    </script>
+    
+</body>
+</html>

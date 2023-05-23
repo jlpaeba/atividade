@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media aluno</title>
+</head>
+
+<body style="background-color: darkgrey;">
+    <div>
+        <h1 style="text-align: center;">calcule sua media aqui :)</h1>
+        <p style="text-align: center;">fiz com a media do if</p>
+
+        <button id="botao">iniciar calculo</button>
+
+
+
+        <div id="situacao">
+
+        </div>
+
+
+
+        <script>
+            let botao = document.getElementById("botao")
+            let situacao = document.getElementById("situacao")
+
+            botao.addEventListener('click', calc)
+            function calc() {
+                let nome = prompt('Qual seu nome')
+                let nota_1 = parseInt(prompt('coloque aqui sua primeira nota porfavor!'))
+                console.log(nota_1);
+                let nota_2 = parseInt(prompt('coloque aqui sua segunda nota porfavor!'))
+                console.log(nota_2);
+                let nota_3 = parseInt(prompt('coloque aqui sua terceira nota porfavor!'))
+                console.log(nota_3);
+                let nota_4 = parseInt(prompt('coloque aqui sua quarta nota porfavor!'))
+                console.log(nota_4);
+                let media = (nota_1 + nota_2 + nota_3 + nota_4) / 4
+
+                console.log(media);
+
+                if (media < 5) {
+                    situacao.innerHTML = `
+                        <h1> Analisando a situação de ${nome}</h1>
+                        <p>com as notas ${nota_1} ${nota_2} ${nota_3} ${nota_4} </p>
+                        <p>Com a media ${media}, abaixo de , o aluno está <strong style="color: red;">Reprovado</strong></p> `
+                } else if (media >= 5 && media < 7) {
+                    situacao.innerHTML = `
+                        <h1> Analisando a situação de ${nome}</h1>
+                        <p>com as notas ${nota_1} ${nota_2} ${nota_3} ${nota_4} </p>
+                        <p>Com a media ${media}, entre 5-7, o aluno está <strong style="color: yellow;">Recuperação</strong></p> `
+                } else if (media <= 10) {
+                    situacao.innerHTML = `
+                        <h1> Analisando a situação de ${nome}</h1>
+                        <p>com as notas ${nota_1} ${nota_2} ${nota_3} ${nota_4} </p>
+                        <p>Com a media ${media}, entre 7-10, o aluno está <strong style="color: green;">aprovado</strong></p> `
+                } else if (media > 10) {
+                    situacao.innerHTML = `
+                        <h1><strong style="color: red;">ALGO ESTÁ ERRADO</strong></h1> 
+                        <p>sua media é ${media} ??????`
+
+                }
+            }
+
+
+        </script>
+    </div>
+</body>
+
+</html>

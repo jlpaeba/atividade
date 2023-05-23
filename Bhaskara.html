@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+<h1>conversor de Temperatura</h1>
+<button id="botao">calcular</button>
+
+<p>clique no botão a cima para iniciar o calculo</p>
+
+<div id="div1"></div>
+<div id="div2"></div>    
+<div id="n"></div>
+
+<script>
+    let div1 = document.getElementById('div1')
+    let div2 = document.getElementById('div2')
+    let botao = document.getElementById('botao');
+    
+    botao.addEventListener('click',calc);
+
+    function calc() {
+    let div1 = document.getElementById('div1')
+
+    let a = prompt('Insira A', 0)
+    let b = prompt('Insira B', 0)
+    let c = prompt('Insira C', 0)
+
+    div1.innerHTML = `<p> \
+    A equação atual é <b>${a}x² + ${b}x + ${c}</b> <br> \
+    O calculo realizado será Δ = ${b}² - 4 * ${a} * ${c} <br> \
+    O valor calculado foi ${b ** 2 - 4 * a * c}
+    </p>
+    `
+
+}
+
+</script>
+</body>
+</html>
